@@ -1,0 +1,11 @@
+.buttons{
+    -fx-background-color: linear-gradient(to bottom,  rgba(135,224,253,1) 0%,rgba(83,203,241,1) 40%,rgba(5,171,224,1) 100%); 
+    -fx-background-radius: 5px;
+    -fx-border-color: black;
+    -fx-border-width: 0.5px;
+    -fx-border-radius: 5px;
+}
+
+.choices {
+    -fx-cell-size: 30;
+}

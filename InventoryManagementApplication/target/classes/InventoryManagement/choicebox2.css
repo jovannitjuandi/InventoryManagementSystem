@@ -1,0 +1,15 @@
+.combo-box {
+  -fx-background-color: #d1d1d1;
+  -fx-mark-color: grey; 
+  -fx-background-radius: 15px;
+}
+
+.combo-box .combo-box-popup .list-view, .combo-box .combo-box-popup .list-cell {
+    -fx-background-color: white ;
+    -fx-text-fill: grey;
+    -fx-backround-radius: 5px;
+}
+.combo-box .combo-box-popup .list-cell:hover {
+    -fx-text-fill: white ;
+    -fx-background-color: #2081c3;
+}

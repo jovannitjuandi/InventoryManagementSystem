@@ -1,0 +1,9 @@
+.button {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-background-color:  #2081c3;
+    -fx-border-color:  transparent;
+    -font-size: 14px;
+    -fx-font-family: 'Segoe UI';
+    -font-weight: bold;
+}

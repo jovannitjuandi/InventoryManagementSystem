@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryManagement.ManagerdashboardController">
+   <children>
+      <AnchorPane layoutX="225.0" layoutY="282.0" prefHeight="287.0" prefWidth="315.0" style="-fx-background-color: #e3feff;">
+         <children>
+            <PieChart fx:id="orderStatusPie" layoutY="41.0" prefHeight="237.0" prefWidth="315.0" />
+            <Text fill="#8d8585" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Status Breakdown">
+               <font>
+                  <Font name="Segoe UI Semibold" size="15.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <Label fx:id="caption" layoutX="451.0" layoutY="91.0" />
+      <AnchorPane prefHeight="64.0" prefWidth="900.0" style="-fx-background-color: #78d5d7;">
+         <children>
+            <Text fx:id="titleText" fill="WHITE" layoutX="204.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGER DASHBOARD">
+               <font>
+                  <Font name="Segoe UI Bold" size="25.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutButton" layoutX="786.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="29.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@test.css" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Text fx:id="loginUserText" fill="WHITE" layoutX="637.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logged in as:">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="551.0" layoutY="283.0" prefHeight="287.0" prefWidth="315.0" style="-fx-background-color: #e3feff;">
+         <children>
+            <Text fx:id="monthlyStatHeading" fill="#8d8585" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Order Spend">
+               <font>
+                  <Font name="Segoe UI Semibold" size="15.0" />
+               </font>
+            </Text>
+            <LineChart fx:id="monthlyOrder" layoutX="18.0" layoutY="35.0" prefHeight="237.0" prefWidth="279.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="225.0" layoutY="79.0" prefHeight="188.0" prefWidth="639.0" style="-fx-background-color: #e3feff;">
+         <children>
+            <Text fx:id="tableTitle" fill="#8d8585" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Changes">
+               <font>
+                  <Font name="Segoe UI Semibold" size="15.0" />
+               </font>
+            </Text>
+            <TableView fx:id="recentOrders" layoutX="37.0" layoutY="41.0" prefHeight="136.0" prefWidth="556.0" stylesheets="@normalTable.css">
+              <columns>
+                <TableColumn fx:id="orderIdCol" prefWidth="92.0" text="Order ID" />
+                <TableColumn fx:id="suppIdCol" prefWidth="121.0" text="Supplier ID" />
+                  <TableColumn fx:id="statusCol" prefWidth="115.0" text="Status" />
+                  <TableColumn fx:id="editDateCol" prefWidth="153.0" text="Edit Date" />
+                  <TableColumn fx:id="totalCol" prefWidth="73.0" text="Total" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="recentOrdersSupp" layoutX="551.0" layoutY="283.0" prefHeight="287.0" prefWidth="315.0" style="-fx-background-color: #e3feff;" visible="false">
+         <children>
+            <Text fill="#8d8585" layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Orders">
+               <font>
+                  <Font name="Segoe UI Semibold" size="15.0" />
+               </font>
+            </Text>
+            <TableView fx:id="recentOrders1" layoutX="7.0" layoutY="44.0" prefHeight="209.0" prefWidth="300.0" stylesheets="@normalTable.css">
+               <columns>
+                  <TableColumn fx:id="orderIdCol1" prefWidth="66.0" text="Order ID" />
+                  <TableColumn fx:id="statusCol1" prefWidth="81.0" text="Status" />
+                  <TableColumn fx:id="placeDateCol1" prefWidth="88.0" text="Date Placed" />
+                  <TableColumn fx:id="totalCol1" prefWidth="63.0" text="Total" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="552.0" layoutY="284.0" prefHeight="287.0" prefWidth="315.0" style="-fx-background-color: #e3feff;" visible="false">
+         <children>
+            <Text fill="#8d8585" layoutX="12.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Monthly Sales">
+               <font>
+                  <Font name="Segoe UI Semibold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="monthlySales" layoutX="94.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="99.99">
+               <font>
+                  <Font name="System Bold" size="49.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="64.0" prefHeight="537.0" prefWidth="179.0" style="-fx-background-color: #404040;">
+         <children>
+            <VBox layoutY="82.0" prefHeight="336.0" prefWidth="194.0">
+               <children>
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHome" prefHeight="64.0" prefWidth="259.0" stylesheets="@dashboardOptions.css" text="Home" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <AnchorPane prefHeight="63.0" prefWidth="52.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="2.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@home.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="producButton" mnemonicParsing="false" onAction="#handleProduct" prefHeight="64.0" prefWidth="259.0" stylesheets="@dashboardOptions.css" text="Products" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <AnchorPane prefHeight="63.0" prefWidth="52.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="9.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@dairy-products.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="orderButton" mnemonicParsing="false" onAction="#handleOrder" prefHeight="64.0" prefWidth="259.0" stylesheets="@dashboardOptions.css" text="Orders" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <AnchorPane prefHeight="63.0" prefWidth="52.0">
+                           <children>
+                              <ImageView fitHeight="33.0" fitWidth="31.0" layoutX="-1.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@box.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="supplierButton" mnemonicParsing="false" onAction="#handleSupplier" prefHeight="64.0" prefWidth="259.0" stylesheets="@dashboardOptions.css" text="Suppliers" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <AnchorPane prefHeight="63.0" prefWidth="52.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="9.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@shop.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="userButton" mnemonicParsing="false" onAction="#handleUser" prefHeight="64.0" prefWidth="259.0" stylesheets="@dashboardOptions.css" text="Users" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI" size="13.0" />
+                     </font>
+                     <graphic>
+                        <AnchorPane prefHeight="63.0" prefWidth="52.0">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="-2.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@man%20(2).png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+            <Button fx:id="aboutButton" layoutX="-2.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleAbout" prefHeight="54.0" prefWidth="194.0" stylesheets="@dashboardOptions.css" text="About" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="13.0" />
+               </font>
+               <graphic>
+                  <AnchorPane prefHeight="36.0" prefWidth="47.0">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="2.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@about.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="33.0" fitWidth="128.0" layoutX="13.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
